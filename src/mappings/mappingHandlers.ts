@@ -15,14 +15,9 @@ import {
 	RewardsClaimed
 } from "../types";
 
+const DAPPSTAKING_CONTRACT_ID = process.env.DAPPSTAKING_CONTRACT_ID as string;
+const DAPPSTAKING_DEVELOPER_ID = process.env.DAPPSTAKING_DEVELOPER_ID as string;
 
-// SHIBUYA
-const DAPPSTAKING_CONTRACT_ID = "Xz3sHvmRgRY3mt3qQ3SjZ3aUPQTfHkj4rKeoQM6VJrenD3W";
-const DAPPSTAKING_DEVELOPER_ID = "WayJSoeDvHLJ8rXPqrPyQQwznntbxvjwvmq1AKBpu9phYHr";
-
-// SHIDEN
-//const DAPPSTAKING_CONTRACT_ID = "X6ykUS6L6CH4EoZitZsYJsCxH2AGk2ky9G6a2xeu1W9ffTP";
-//const DAPPSTAKING_DEVELOPER_ID = "aqcmQUATZiaHmZtueE5chfSZRTvsvtSpmx57fZBhktDt4Rm";
 
 async function getCurrentEra(): Promise<bigint> {
 	let currentEra = BigInt(0);
@@ -208,6 +203,8 @@ export async function newDappStakingEra(event: SubstrateEvent): Promise<void> {
     } = event;
 
     await logger.info("---------- DappsStaking - New DappStaking Era --------- ");
+	await logger.info(DAPPSTAKING_CONTRACT_ID);
+	await logger.info(DAPPSTAKING_DEVELOPER_ID);
 
 	const newEra = await toBigInt(era);
 	let dappStakingEra = new DappStakingEra(

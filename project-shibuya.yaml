@@ -24,7 +24,7 @@ dataSources:
   - kind: substrate/Runtime
     startBlock: 3393298
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexShibuya.js
       handlers:
         - handler: bondAndStake
           kind: substrate/EventHandler
@@ -63,7 +63,7 @@ dataSources:
 #      luckyRaffle:
 #        file: ./metadata_shibuya/lucky_raffle_metadata.json
 #    mapping:
-#      file: ./dist/index.js
+#      file: ./dist/indexShibuya.js
 #      handlers:
 #        - handler: raffleDone
 #          kind: substrate/WasmEvent
@@ -80,7 +80,7 @@ dataSources:
       luckyRaffle:
         file: ./metadata_shibuya/lucky_raffle_metadata.json
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexShibuya.js
       handlers:
         - handler: raffleDone
           kind: substrate/WasmEvent
@@ -97,7 +97,7 @@ dataSources:
       rewardManager:
         file: ./metadata_shibuya/reward_manager_metadata.json
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexShibuya.js
       handlers:
         - handler: pendingReward
           kind: substrate/WasmEvent
@@ -114,7 +114,7 @@ dataSources:
       rewardManager:
         file: ./metadata_shibuya/reward_manager_metadata.json
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexShibuya.js
       handlers:
         - handler: rewardsClaimed
           kind: substrate/WasmEvent

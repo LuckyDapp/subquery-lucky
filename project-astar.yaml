@@ -22,7 +22,7 @@ dataSources:
   - kind: substrate/Runtime
     startBlock: 3964500
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexAstar.js
       handlers:
         - handler: bondAndStake
           kind: substrate/EventHandler
@@ -60,7 +60,7 @@ dataSources:
       luckyRaffle:
         file: ./metadata/lucky_raffle_metadata.json
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexAstar.js
       handlers:
         - handler: raffleDone
           kind: substrate/WasmEvent
@@ -77,7 +77,7 @@ dataSources:
       rewardManager:
         file: ./metadata/reward_manager_metadata.json
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexAstar.js
       handlers:
         - handler: pendingReward
           kind: substrate/WasmEvent
@@ -94,7 +94,7 @@ dataSources:
       rewardManager:
         file: ./metadata/reward_manager_metadata.json
     mapping:
-      file: ./dist/index.js
+      file: ./dist/indexAstar.js
       handlers:
         - handler: rewardsClaimed
           kind: substrate/WasmEvent

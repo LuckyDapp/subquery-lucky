@@ -1,6 +1,6 @@
 {
   "name": "lucky-subql",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "This SubQuery project can be use as a starting point for Astar network",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,9 @@
   "files": [
     "dist",
     "schema.graphql",
-    "project.yaml"
+    "project-shibuya.yaml",
+    "project-shiden.yaml",
+    "project-astar.yaml"
   ],
   "author": "GuiGou",
   "license": "MIT",

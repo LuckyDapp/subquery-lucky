@@ -75,7 +75,7 @@ dataSources:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
         abi: luckyRaffle
-        contract: arobt7C1EEULtwsVhxSQnjA5ajrTsZnUBBU5fJV7z356Sp7
+        contract: Y4k5gyegtv3UuZBLFKVtfThoXvpSAPNeQeLutodrCukrpzy
     assets:
       luckyRaffle:
         file: ./metadata_shibuya/lucky_raffle_metadata.json

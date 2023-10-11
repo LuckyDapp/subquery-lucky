@@ -16,7 +16,9 @@
   "files": [
     "dist",
     "schema.graphql",
-    "project.yaml"
+    "project-shibuya.yaml",
+    "project-shiden.yaml",
+    "project-astar.yaml"
   ],
   "author": "GuiGou",
   "license": "MIT",

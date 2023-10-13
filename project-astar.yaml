@@ -55,7 +55,7 @@ dataSources:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
         abi: luckyRaffle
-        contract: YefiLw34yyqYniJVbgMzvu9CMyCwTWktdpAgBRycgkSy9YU
+        contract: XPC4BUeSHhTWqzUdUWtW1cTNHhktNPgenKZ4qq2FkKR2two
     assets:
       luckyRaffle:
         file: ./metadata_astar/lucky_raffle_metadata.json
@@ -72,7 +72,7 @@ dataSources:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
         abi: rewardManager
-        contract: bbXFDjNBVhA8nmPN5pvgb8bXu5LVNpkGBKbM5QjpKyTsoZw
+        contract: ZSV1GVepvmWFdshMWgczS4zYvmmwEsBjWQjN4WDpUEFRRPy
     assets:
       rewardManager:
         file: ./metadata_astar/reward_manager_metadata.json
@@ -89,7 +89,7 @@ dataSources:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
         abi: rewardManager
-        contract: bbXFDjNBVhA8nmPN5pvgb8bXu5LVNpkGBKbM5QjpKyTsoZw
+        contract: ZSV1GVepvmWFdshMWgczS4zYvmmwEsBjWQjN4WDpUEFRRPy
     assets:
       rewardManager:
         file: ./metadata_astar/reward_manager_metadata.json

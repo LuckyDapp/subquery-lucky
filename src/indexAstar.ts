@@ -1,7 +1,7 @@
 
 // ASTAR
-process.env.DAPPSTAKING_CONTRACT_ID = "";
-process.env.DAPPSTAKING_DEVELOPER_ID = "ZRM5bUZYZrV3Vc2BUe5eHsbDj6v9FqNndBsvGBEAJHkCDC6";
+process.env.DAPPSTAKING_CONTRACT_ID = "ZSV1GVepvmWFdshMWgczS4zYvmmwEsBjWQjN4WDpUEFRRPy";
+process.env.DAPPSTAKING_DEVELOPER_ID = "ZEUr1PBaxshhhPcF4jeVFVoC6BwCDYj48UsJ5ShquWN2yeE";
 
 //Exports all handler functions
 export * from "./mappings/mappingHandlers";

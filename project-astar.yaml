@@ -20,7 +20,7 @@ network:
     file: ./dist/chaintypes.js
 dataSources:
   - kind: substrate/Runtime
-    startBlock: 4633310
+    startBlock: 4668050
     mapping:
       file: ./dist/indexAstar.js
       handlers:
@@ -50,7 +50,7 @@ dataSources:
             module: dappsStaking
             method: NewDappStakingEra
   - kind: substrate/Wasm
-    startBlock: 4633310
+    startBlock: 4668050
     processor:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
@@ -67,7 +67,7 @@ dataSources:
           filter:
             identifier: RaffleDone
   - kind: substrate/Wasm
-    startBlock: 4633310
+    startBlock: 4668050
     processor:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
@@ -84,7 +84,7 @@ dataSources:
           filter:
             identifier: PendingReward
   - kind: substrate/Wasm
-    startBlock: 4633310
+    startBlock: 4668050
     processor:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:

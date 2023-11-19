@@ -238,6 +238,11 @@ export async function raffleDone(event: WasmEvent<RaffleDoneEvent>): Promise<voi
 
     await logger.info("---------- Raffle Done  --------- ");
 
+	if (!event.args){
+		await logger.warn("No Event");
+		return;
+	}
+
 	const [contract, era, pendingRewards, nbWinners, nbParticipants, totalValue] = event.args;
 
 	let raffleDone = new RaffleDone(
@@ -262,6 +267,11 @@ type PendingRewardEvent = [AccountId, UInt, Balance] & {
 export async function pendingReward(event: WasmEvent<PendingRewardEvent>): Promise<void> {
 
     await logger.info("---------- Pending Reward --------- ");
+
+	if (!event.args){
+		await logger.warn("No Event");
+		return;
+	}
 
 	const [account, era, amount] = event.args;
 
@@ -289,6 +299,11 @@ type RewardsClaimedEvent = [AccountId, Balance] & {
 export async function rewardsClaimed(event: WasmEvent<RewardsClaimedEvent>): Promise<void> {
 
     await logger.info("---------- Rewards Claimed --------- ");
+
+	if (!event.args){
+		await logger.warn("No Event");
+		return;
+	}
 
 	const [account, amount] = event.args;
 

@@ -8,13 +8,15 @@ runner:
   query:
     name: "@subql/query"
     version: "*"
-description: This SubQuery project can be use as a starting point for Astar network
-repository: "https://github.com/GuiGou12358/lucky-subql"
+description: This SubQuery project indexes data used by the dApp Lucky on Shiden network
+repository: "https://github.com/LuckyDapp/subquery-lucky"
 schema:
   file: ./schema.graphql
 network:
   chainId: "0xf1cf9022c7ebb34b162d5b5e34e705a5a740b2d0ecc1009fb89023e62a488108"
-  endpoint: "wss://shiden.api.onfinality.io/ws?apikey=0f201666-ef1e-42d5-b901-7683cb755286"
+  endpoint:
+    - wss://rpc.shiden.astar.network
+    - wss://shiden-rpc.dwellir.com
   dictionary: "https://api.subquery.network/sq/subquery/shiden-dictionary"
   chaintypes:
     file: ./dist/chaintypes.js

@@ -1,7 +1,7 @@
 {
   "name": "lucky-subql",
   "version": "1.0.0",
-  "description": "This SubQuery project can be use as a starting point for Astar network",
+  "description": "This SubQuery project indexes data used  by the dApp Lucky",
   "main": "dist/index.js",
   "scripts": {
     "build": "subql build",
@@ -9,10 +9,10 @@
     "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
     "dev": "subql codegen && subql build && docker-compose pull && docker-compose up --remove-orphans",
     "prepack": "rm -rf dist && npm run build",
-    "test": "jest"
+    "test": "subql build && subql-node test"
   },
-  "homepage": "https://github.com/subquery/astar-subql-starter",
-  "repository": "github:subquery/astar-subql-starter",
+  "homepage": "https://github.com/LuckyDapp/subquery-lucky",
+  "repository": "https://github.com/LuckyDapp/subquery-lucky",
   "files": [
     "dist",
     "schema.graphql",
@@ -24,9 +24,15 @@
   "license": "MIT",
   "devDependencies": {
     "@polkadot/api": "^10",
+    "@subql/types": "latest",
+    "typescript": "^4.1.3",
     "@subql/cli": "latest",
-    "@subql/types": "^1.1.0",
-    "typescript": "^4.6.2"
+    "node-fetch": "2.6.7",
+    "@subql/testing": "latest",
+    "@subql/node": "latest"
+  },
+  "resolutions": {
+    "ipfs-unixfs": "6.0.6"
   },
   "dependencies": {
     "@subql/substrate-wasm-processor": "latest"

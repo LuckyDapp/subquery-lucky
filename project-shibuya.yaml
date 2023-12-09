@@ -93,7 +93,8 @@ dataSources:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
         abi: rewardManager
-        contract: WDtNnQgygsCXKfjdvL5TgimewWhcBhJgSSCkb5u5pzZJTpR
+        #contract: WDtNnQgygsCXKfjdvL5TgimewWhcBhJgSSCkb5u5pzZJTpR
+        contract: X8nqJsFQWBk137WxetcPdAGLwnJ8xpAQ5tXS1bNsHKaz1q6
     assets:
       rewardManager:
         file: ./metadata_shibuya/reward_manager_metadata.json
@@ -110,7 +111,8 @@ dataSources:
       file: ./node_modules/@subql/substrate-wasm-processor/dist/bundle.js
       options:
         abi: rewardManager
-        contract: WDtNnQgygsCXKfjdvL5TgimewWhcBhJgSSCkb5u5pzZJTpR
+        #contract: WDtNnQgygsCXKfjdvL5TgimewWhcBhJgSSCkb5u5pzZJTpR
+        contract: X8nqJsFQWBk137WxetcPdAGLwnJ8xpAQ5tXS1bNsHKaz1q6
     assets:
       rewardManager:
         file: ./metadata_shibuya/reward_manager_metadata.json

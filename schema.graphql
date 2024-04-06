@@ -28,14 +28,6 @@ type DAppReward @entity {
     amount: BigInt!
 }
 
-""" Developer Reward have been used in dAppStaking V2 - we can remove it when dAppStaking V3 will be fully operational """
-type DeveloperReward @entity {
-  id: ID! # Transaction hash
-  era: BigInt!
-  account: Account!
-  amount: BigInt!
-}
-
 type PalletInfo @entity {
     id: ID! # always 0
     currentEra: BigInt
@@ -63,6 +55,11 @@ type RaffleDone @entity {
     nbWinners: BigInt!
     nbParticipants: BigInt!
     totalValue: BigInt!
+}
+
+type RaffleSkipped @entity {
+    id: ID! # Transaction hash
+    era: BigInt!
 }
 
 type Reward @entity {

@@ -110,8 +110,14 @@ const projectShibuya: SubstrateProject<WasmDatasource> = {
                         handler: "handleRaffleDone",
                         kind: "substrate/WasmEvent",
                         filter: {
-                            contract: "WxB2uwWr1JmUZofp1amiKUcsjtsCZKTUBZg4MWf3HJoMQuY",
                             identifier: "RaffleDone"
+                        }
+                    },
+                    {
+                        handler: "handleRaffleSkipped",
+                        kind: "substrate/WasmEvent",
+                        filter: {
+                            identifier: "RaffleSkipped"
                         }
                     }
                 ]
@@ -136,7 +142,6 @@ const projectShibuya: SubstrateProject<WasmDatasource> = {
                         handler: "handlePendingReward",
                         kind: "substrate/WasmEvent",
                         filter: {
-                            contract: "X8nqJsFQWBk137WxetcPdAGLwnJ8xpAQ5tXS1bNsHKaz1q6",
                             identifier: "PendingReward"
                         }
                     },
@@ -144,7 +149,6 @@ const projectShibuya: SubstrateProject<WasmDatasource> = {
                         handler: "handleRewardsClaimed",
                         kind: "substrate/WasmEvent",
                         filter: {
-                            contract: "X8nqJsFQWBk137WxetcPdAGLwnJ8xpAQ5tXS1bNsHKaz1q6",
                             identifier: "RewardsClaimed"
                         }
                     }

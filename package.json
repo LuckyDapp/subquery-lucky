@@ -15,12 +15,14 @@
     "prepack": "rm -rf dist && npm run build",
     "test": "subql build && subql-node test"
   },
-  "homepage": "https://github.com/LuckyDapp/subquery-lucky-v3",
-  "repository": "https://github.com/LuckyDapp/subquery-lucky-v3",
+  "homepage": "https://github.com/LuckyDapp/subquery-lucky",
+  "repository": "https://github.com/LuckyDapp/subquery-lucky",
   "files": [
     "dist",
     "schema.graphql",
-    "project-shibuya.ts"
+    "project-shibuya.ts",
+    "project-shiden.ts",
+    "project-astar.ts"
   ],
   "author": "GuiGou",
   "license": "Apache-2.0",

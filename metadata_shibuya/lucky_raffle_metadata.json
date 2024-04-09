@@ -1,8 +1,8 @@
 {
   "source": {
-    "hash": "0x899234eb096cbf991d945289838d087ec0febc903e01b451fa3e6f2c4a428edb",
+    "hash": "0x618cc21031ed7bf0536551f48cafa1ca2c4d05c3354af7febd0ea34c738b62a9",
     "language": "ink! 4.3.0",
-    "compiler": "rustc 1.76.0",
+    "compiler": "rustc 1.75.0",
     "build_info": {
       "build_mode": "Debug",
       "cargo_contract_version": "3.2.0",
@@ -14,8 +14,8 @@
     }
   },
   "contract": {
-    "name": "raffle_consumer",
-    "version": "2.0.0",
+    "name": "lucky_raffle",
+    "version": "1.0.1",
     "authors": [
       "guigou"
     ]
@@ -146,7 +146,7 @@
           }
         ],
         "docs": [
-          "Event emitted when the Raffle is done"
+          "Event emitted when the Rafle is done"
         ],
         "label": "RaffleDone"
       },
@@ -404,7 +404,7 @@
         "args": [],
         "default": false,
         "docs": [],
-        "label": "Raffle::get_ratio_distribution",
+        "label": "Raffle::get_next_era",
         "mutates": false,
         "payable": false,
         "returnType": {
@@ -414,7 +414,34 @@
           ],
           "type": 22
         },
-        "selector": "0xda5dc8c5"
+        "selector": "0xb599cf4c"
+      },
+      {
+        "args": [
+          {
+            "label": "next_era",
+            "type": {
+              "displayName": [
+                "raffle_external",
+                "SetNextEraInput1"
+              ],
+              "type": 3
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "Raffle::set_next_era",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 24
+        },
+        "selector": "0x5d1ec18c"
       },
       {
         "args": [],
@@ -428,7 +455,7 @@
             "ink",
             "MessageResult"
           ],
-          "type": 23
+          "type": 26
         },
         "selector": "0x9b68910e"
       },
@@ -476,37 +503,10 @@
         "selector": "0x98737fd4"
       },
       {
-        "args": [
-          {
-            "label": "next_era",
-            "type": {
-              "displayName": [
-                "raffle_external",
-                "SetNextEraInput1"
-              ],
-              "type": 3
-            }
-          }
-        ],
-        "default": false,
-        "docs": [],
-        "label": "Raffle::set_next_era",
-        "mutates": true,
-        "payable": false,
-        "returnType": {
-          "displayName": [
-            "ink",
-            "MessageResult"
-          ],
-          "type": 24
-        },
-        "selector": "0x5d1ec18c"
-      },
-      {
         "args": [],
         "default": false,
         "docs": [],
-        "label": "Raffle::get_next_era",
+        "label": "Raffle::get_ratio_distribution",
         "mutates": false,
         "payable": false,
         "returnType": {
@@ -514,15 +514,15 @@
             "ink",
             "MessageResult"
           ],
-          "type": 26
+          "type": 27
         },
-        "selector": "0xb599cf4c"
+        "selector": "0xda5dc8c5"
       },
       {
         "args": [],
         "default": false,
         "docs": [],
-        "label": "FilterLatestWinners::get_nb_winners_filtered",
+        "label": "FilterLatestWinners::get_last_winners",
         "mutates": false,
         "payable": false,
         "returnType": {
@@ -532,7 +532,7 @@
           ],
           "type": 28
         },
-        "selector": "0x0a88f283"
+        "selector": "0xad2bf9f6"
       },
       {
         "args": [
@@ -565,7 +565,7 @@
         "args": [],
         "default": false,
         "docs": [],
-        "label": "FilterLatestWinners::get_last_winners",
+        "label": "FilterLatestWinners::get_nb_winners_filtered",
         "mutates": false,
         "payable": false,
         "returnType": {
@@ -575,54 +575,7 @@
           ],
           "type": 32
         },
-        "selector": "0xad2bf9f6"
-      },
-      {
-        "args": [
-          {
-            "label": "conditions",
-            "type": {
-              "displayName": [
-                "rollupanchor_external",
-                "RollupCondEqInput1"
-              ],
-              "type": 33
-            }
-          },
-          {
-            "label": "updates",
-            "type": {
-              "displayName": [
-                "rollupanchor_external",
-                "RollupCondEqInput2"
-              ],
-              "type": 33
-            }
-          },
-          {
-            "label": "actions",
-            "type": {
-              "displayName": [
-                "rollupanchor_external",
-                "RollupCondEqInput3"
-              ],
-              "type": 36
-            }
-          }
-        ],
-        "default": false,
-        "docs": [],
-        "label": "RollupAnchor::rollup_cond_eq",
-        "mutates": true,
-        "payable": false,
-        "returnType": {
-          "displayName": [
-            "ink",
-            "MessageResult"
-          ],
-          "type": 38
-        },
-        "selector": "0x95233d74"
+        "selector": "0x0a88f283"
       },
       {
         "args": [
@@ -647,9 +600,56 @@
             "ink",
             "MessageResult"
           ],
-          "type": 41
+          "type": 33
         },
         "selector": "0xdfec736d"
+      },
+      {
+        "args": [
+          {
+            "label": "conditions",
+            "type": {
+              "displayName": [
+                "rollupanchor_external",
+                "RollupCondEqInput1"
+              ],
+              "type": 35
+            }
+          },
+          {
+            "label": "updates",
+            "type": {
+              "displayName": [
+                "rollupanchor_external",
+                "RollupCondEqInput2"
+              ],
+              "type": 35
+            }
+          },
+          {
+            "label": "actions",
+            "type": {
+              "displayName": [
+                "rollupanchor_external",
+                "RollupCondEqInput3"
+              ],
+              "type": 37
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "RollupAnchor::rollup_cond_eq",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 39
+        },
+        "selector": "0x95233d74"
       },
       {
         "args": [
@@ -726,11 +726,22 @@
         "selector": "0x3ecc267e"
       },
       {
-        "args": [],
+        "args": [
+          {
+            "label": "settings_hash",
+            "type": {
+              "displayName": [
+                "jsrollupanchor_external",
+                "SetSettingsHashInput1"
+              ],
+              "type": 1
+            }
+          }
+        ],
         "default": false,
         "docs": [],
-        "label": "JsRollupAnchor::get_settings_hash",
-        "mutates": false,
+        "label": "JsRollupAnchor::set_settings_hash",
+        "mutates": true,
         "payable": false,
         "returnType": {
           "displayName": [
@@ -739,7 +750,7 @@
           ],
           "type": 51
         },
-        "selector": "0x58f02ca2"
+        "selector": "0xa94e906d"
       },
       {
         "args": [],
@@ -753,9 +764,25 @@
             "ink",
             "MessageResult"
           ],
-          "type": 51
+          "type": 54
         },
         "selector": "0xf63cf9a4"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "JsRollupAnchor::get_settings_hash",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 54
+        },
+        "selector": "0x58f02ca2"
       },
       {
         "args": [
@@ -780,26 +807,15 @@
             "ink",
             "MessageResult"
           ],
-          "type": 53
+          "type": 51
         },
         "selector": "0xb6d16583"
       },
       {
-        "args": [
-          {
-            "label": "settings_hash",
-            "type": {
-              "displayName": [
-                "jsrollupanchor_external",
-                "SetSettingsHashInput1"
-              ],
-              "type": 1
-            }
-          }
-        ],
+        "args": [],
         "default": false,
         "docs": [],
-        "label": "JsRollupAnchor::set_settings_hash",
+        "label": "Ownable::renounce_ownership",
         "mutates": true,
         "payable": false,
         "returnType": {
@@ -807,9 +823,25 @@
             "ink",
             "MessageResult"
           ],
-          "type": 53
+          "type": 56
         },
-        "selector": "0xa94e906d"
+        "selector": "0x5e228753"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "Ownable::owner",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 17
+        },
+        "selector": "0x4fa43c8c"
       },
       {
         "args": [
@@ -839,10 +871,21 @@
         "selector": "0x11f43efd"
       },
       {
-        "args": [],
+        "args": [
+          {
+            "label": "role",
+            "type": {
+              "displayName": [
+                "accesscontrol_external",
+                "GetRoleAdminInput1"
+              ],
+              "type": 3
+            }
+          }
+        ],
         "default": false,
         "docs": [],
-        "label": "Ownable::owner",
+        "label": "AccessControl::get_role_admin",
         "mutates": false,
         "payable": false,
         "returnType": {
@@ -850,25 +893,9 @@
             "ink",
             "MessageResult"
           ],
-          "type": 17
+          "type": 21
         },
-        "selector": "0x4fa43c8c"
-      },
-      {
-        "args": [],
-        "default": false,
-        "docs": [],
-        "label": "Ownable::renounce_ownership",
-        "mutates": true,
-        "payable": false,
-        "returnType": {
-          "displayName": [
-            "ink",
-            "MessageResult"
-          ],
-          "type": 56
-        },
-        "selector": "0x5e228753"
+        "selector": "0x83da3bb2"
       },
       {
         "args": [
@@ -906,70 +933,6 @@
           "type": 19
         },
         "selector": "0x4ac062fd"
-      },
-      {
-        "args": [
-          {
-            "label": "role",
-            "type": {
-              "displayName": [
-                "accesscontrol_external",
-                "RevokeRoleInput1"
-              ],
-              "type": 3
-            }
-          },
-          {
-            "label": "account",
-            "type": {
-              "displayName": [
-                "accesscontrol_external",
-                "RevokeRoleInput2"
-              ],
-              "type": 18
-            }
-          }
-        ],
-        "default": false,
-        "docs": [],
-        "label": "AccessControl::revoke_role",
-        "mutates": true,
-        "payable": false,
-        "returnType": {
-          "displayName": [
-            "ink",
-            "MessageResult"
-          ],
-          "type": 19
-        },
-        "selector": "0x6e4f0991"
-      },
-      {
-        "args": [
-          {
-            "label": "role",
-            "type": {
-              "displayName": [
-                "accesscontrol_external",
-                "GetRoleAdminInput1"
-              ],
-              "type": 3
-            }
-          }
-        ],
-        "default": false,
-        "docs": [],
-        "label": "AccessControl::get_role_admin",
-        "mutates": false,
-        "payable": false,
-        "returnType": {
-          "displayName": [
-            "ink",
-            "MessageResult"
-          ],
-          "type": 21
-        },
-        "selector": "0x83da3bb2"
       },
       {
         "args": [
@@ -1044,6 +1007,43 @@
           "type": 59
         },
         "selector": "0xc1d9ac18"
+      },
+      {
+        "args": [
+          {
+            "label": "role",
+            "type": {
+              "displayName": [
+                "accesscontrol_external",
+                "RevokeRoleInput1"
+              ],
+              "type": 3
+            }
+          },
+          {
+            "label": "account",
+            "type": {
+              "displayName": [
+                "accesscontrol_external",
+                "RevokeRoleInput2"
+              ],
+              "type": 18
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "AccessControl::revoke_role",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 19
+        },
+        "selector": "0x6e4f0991"
       },
       {
         "args": [
@@ -1686,8 +1686,8 @@
           }
         },
         "path": [
-          "raffle_consumer",
-          "raffle_consumer",
+          "lucky_raffle",
+          "raffle_contract",
           "ContractError"
         ]
       }
@@ -1999,7 +1999,7 @@
               {
                 "fields": [
                   {
-                    "type": 7
+                    "type": 23
                   }
                 ],
                 "index": 0,
@@ -2020,7 +2020,7 @@
         "params": [
           {
             "name": "T",
-            "type": 7
+            "type": 23
           },
           {
             "name": "E",
@@ -2041,7 +2041,7 @@
               {
                 "fields": [
                   {
-                    "type": 6
+                    "type": 3
                   }
                 ],
                 "index": 0,
@@ -2050,7 +2050,7 @@
               {
                 "fields": [
                   {
-                    "type": 11
+                    "type": 16
                   }
                 ],
                 "index": 1,
@@ -2062,11 +2062,11 @@
         "params": [
           {
             "name": "T",
-            "type": 6
+            "type": 3
           },
           {
             "name": "E",
-            "type": 11
+            "type": 16
           }
         ],
         "path": [
@@ -2167,7 +2167,7 @@
               {
                 "fields": [
                   {
-                    "type": 27
+                    "type": 6
                   }
                 ],
                 "index": 0,
@@ -2188,7 +2188,7 @@
         "params": [
           {
             "name": "T",
-            "type": 27
+            "type": 6
           },
           {
             "name": "E",
@@ -2209,49 +2209,7 @@
               {
                 "fields": [
                   {
-                    "type": 3
-                  }
-                ],
-                "index": 0,
-                "name": "Ok"
-              },
-              {
-                "fields": [
-                  {
-                    "type": 16
-                  }
-                ],
-                "index": 1,
-                "name": "Err"
-              }
-            ]
-          }
-        },
-        "params": [
-          {
-            "name": "T",
-            "type": 3
-          },
-          {
-            "name": "E",
-            "type": 16
-          }
-        ],
-        "path": [
-          "Result"
-        ]
-      }
-    },
-    {
-      "id": 28,
-      "type": {
-        "def": {
-          "variant": {
-            "variants": [
-              {
-                "fields": [
-                  {
-                    "type": 8
+                    "type": 7
                   }
                 ],
                 "index": 0,
@@ -2272,7 +2230,49 @@
         "params": [
           {
             "name": "T",
-            "type": 8
+            "type": 7
+          },
+          {
+            "name": "E",
+            "type": 11
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 9
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 11
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 9
           },
           {
             "name": "E",
@@ -2404,7 +2404,7 @@
               {
                 "fields": [
                   {
-                    "type": 9
+                    "type": 8
                   }
                 ],
                 "index": 0,
@@ -2425,7 +2425,7 @@
         "params": [
           {
             "name": "T",
-            "type": 9
+            "type": 8
           },
           {
             "name": "E",
@@ -2441,25 +2441,46 @@
       "id": 33,
       "type": {
         "def": {
-          "sequence": {
-            "type": 34
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 34
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 11
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
           }
-        }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 34
+          },
+          {
+            "name": "E",
+            "type": 11
+          }
+        ],
+        "path": [
+          "Result"
+        ]
       }
     },
     {
       "id": 34,
-      "type": {
-        "def": {
-          "tuple": [
-            5,
-            35
-          ]
-        }
-      }
-    },
-    {
-      "id": 35,
       "type": {
         "def": {
           "variant": {
@@ -2492,17 +2513,38 @@
       }
     },
     {
-      "id": 36,
+      "id": 35,
       "type": {
         "def": {
           "sequence": {
-            "type": 37
+            "type": 36
           }
         }
       }
     },
     {
+      "id": 36,
+      "type": {
+        "def": {
+          "tuple": [
+            5,
+            34
+          ]
+        }
+      }
+    },
+    {
       "id": 37,
+      "type": {
+        "def": {
+          "sequence": {
+            "type": 38
+          }
+        }
+      }
+    },
+    {
+      "id": 38,
       "type": {
         "def": {
           "variant": {
@@ -2559,7 +2601,7 @@
       }
     },
     {
-      "id": 38,
+      "id": 39,
       "type": {
         "def": {
           "variant": {
@@ -2567,7 +2609,7 @@
               {
                 "fields": [
                   {
-                    "type": 39
+                    "type": 40
                   }
                 ],
                 "index": 0,
@@ -2588,7 +2630,7 @@
         "params": [
           {
             "name": "T",
-            "type": 39
+            "type": 40
           },
           {
             "name": "E",
@@ -2601,7 +2643,7 @@
       }
     },
     {
-      "id": 39,
+      "id": 40,
       "type": {
         "def": {
           "variant": {
@@ -2618,7 +2660,7 @@
               {
                 "fields": [
                   {
-                    "type": 40
+                    "type": 41
                   }
                 ],
                 "index": 1,
@@ -2634,7 +2676,7 @@
           },
           {
             "name": "E",
-            "type": 40
+            "type": 41
           }
         ],
         "path": [
@@ -2643,7 +2685,7 @@
       }
     },
     {
-      "id": 40,
+      "id": 41,
       "type": {
         "def": {
           "variant": {
@@ -2682,48 +2724,6 @@
           "traits",
           "rollup_anchor",
           "RollupAnchorError"
-        ]
-      }
-    },
-    {
-      "id": 41,
-      "type": {
-        "def": {
-          "variant": {
-            "variants": [
-              {
-                "fields": [
-                  {
-                    "type": 35
-                  }
-                ],
-                "index": 0,
-                "name": "Ok"
-              },
-              {
-                "fields": [
-                  {
-                    "type": 11
-                  }
-                ],
-                "index": 1,
-                "name": "Err"
-              }
-            ]
-          }
-        },
-        "params": [
-          {
-            "name": "T",
-            "type": 35
-          },
-          {
-            "name": "E",
-            "type": 11
-          }
-        ],
-        "path": [
-          "Result"
         ]
       }
     },
@@ -2888,7 +2888,7 @@
               {
                 "fields": [
                   {
-                    "type": 40,
+                    "type": 41,
                     "typeName": "RollupAnchorError"
                   }
                 ],
@@ -3070,6 +3070,117 @@
           "variant": {
             "variants": [
               {
+                "fields": [
+                  {
+                    "type": 4
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 53
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 4
+          },
+          {
+            "name": "E",
+            "type": 53
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 53,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 15,
+                    "typeName": "AccessControlError"
+                  }
+                ],
+                "index": 0,
+                "name": "AccessControlError"
+              }
+            ]
+          }
+        },
+        "path": [
+          "phat_rollup_anchor_ink",
+          "traits",
+          "js_rollup_anchor",
+          "JsRollupAnchorError"
+        ]
+      }
+    },
+    {
+      "id": 54,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 55
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 11
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 55
+          },
+          {
+            "name": "E",
+            "type": 11
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 55,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
                 "index": 0,
                 "name": "None"
               },
@@ -3093,117 +3204,6 @@
         ],
         "path": [
           "Option"
-        ]
-      }
-    },
-    {
-      "id": 53,
-      "type": {
-        "def": {
-          "variant": {
-            "variants": [
-              {
-                "fields": [
-                  {
-                    "type": 54
-                  }
-                ],
-                "index": 0,
-                "name": "Ok"
-              },
-              {
-                "fields": [
-                  {
-                    "type": 11
-                  }
-                ],
-                "index": 1,
-                "name": "Err"
-              }
-            ]
-          }
-        },
-        "params": [
-          {
-            "name": "T",
-            "type": 54
-          },
-          {
-            "name": "E",
-            "type": 11
-          }
-        ],
-        "path": [
-          "Result"
-        ]
-      }
-    },
-    {
-      "id": 54,
-      "type": {
-        "def": {
-          "variant": {
-            "variants": [
-              {
-                "fields": [
-                  {
-                    "type": 4
-                  }
-                ],
-                "index": 0,
-                "name": "Ok"
-              },
-              {
-                "fields": [
-                  {
-                    "type": 55
-                  }
-                ],
-                "index": 1,
-                "name": "Err"
-              }
-            ]
-          }
-        },
-        "params": [
-          {
-            "name": "T",
-            "type": 4
-          },
-          {
-            "name": "E",
-            "type": 55
-          }
-        ],
-        "path": [
-          "Result"
-        ]
-      }
-    },
-    {
-      "id": 55,
-      "type": {
-        "def": {
-          "variant": {
-            "variants": [
-              {
-                "fields": [
-                  {
-                    "type": 15,
-                    "typeName": "AccessControlError"
-                  }
-                ],
-                "index": 0,
-                "name": "AccessControlError"
-              }
-            ]
-          }
-        },
-        "path": [
-          "phat_rollup_anchor_ink",
-          "traits",
-          "js_rollup_anchor",
-          "JsRollupAnchorError"
         ]
       }
     },

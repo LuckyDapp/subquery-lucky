@@ -80,7 +80,7 @@ const projectShiden: SubstrateProject<WasmDatasource> = {
         },
         {
             kind: "substrate/Wasm",
-            startBlock: 3964500,
+            startBlock: 6391400,
             //endBlock: 1,
             processor: {
                 file: "./node_modules/@subql/substrate-wasm-processor/dist/bundle.js",

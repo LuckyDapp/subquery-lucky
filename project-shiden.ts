@@ -86,8 +86,8 @@ const projectShiden: SubstrateProject<WasmDatasource> = {
                 file: "./node_modules/@subql/substrate-wasm-processor/dist/bundle.js",
                 options: {
                     abi: "luckyRaffle",
-                    //old contract before 2024-03-01: "antwZPZH7fuhLwcjKQUT2cbpfjcKUJS1bt1Lnq2VxSszg8d",
-                    contract: "antwZPZH7fuhLwcjKQUT2cbpfjcKUJS1bt1Lnq2VxSszg8d",
+                    //old contract before 2024-04-25: "antwZPZH7fuhLwcjKQUT2cbpfjcKUJS1bt1Lnq2VxSszg8d",
+                    contract: "W5pzj2pfkkvsNbyLCSA92G5VNYWmxvS86EiN9Kog6PrTfij",
                 },
             },
             assets: new Map([["luckyRaffle", {file: "./metadata_shiden/lucky_raffle_metadata.json"}]]),

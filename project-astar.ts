@@ -80,14 +80,14 @@ const projectAstar: SubstrateProject<WasmDatasource> = {
         },
         {
             kind: "substrate/Wasm",
-            startBlock: 4668050,
+            startBlock: 6111890,
             //endBlock: 1,
             processor: {
                 file: "./node_modules/@subql/substrate-wasm-processor/dist/bundle.js",
                 options: {
                     abi: "luckyRaffle",
-                    //old contract before 2024-03-01: "XPC4BUeSHhTWqzUdUWtW1cTNHhktNPgenKZ4qq2FkKR2two",
-                    contract: "XPC4BUeSHhTWqzUdUWtW1cTNHhktNPgenKZ4qq2FkKR2two",
+                    //old contract before 2024-05-06: "XPC4BUeSHhTWqzUdUWtW1cTNHhktNPgenKZ4qq2FkKR2two",
+                    contract: "W8aL4naa9CarCYxpepfm3BQS5SqMnJXfe2pPQZ3Kiie6k82",
                 },
             },
             assets: new Map([["luckyRaffle", {file: "./metadata_astar/lucky_raffle_metadata.json"}]]),

@@ -29,56 +29,6 @@ const projectShiden: SubstrateProject<WasmDatasource> = {
     },
     dataSources: [
         {
-            // This is the datasource for Astar's Native Substrate processor (dAppStakingV2)
-            kind: SubstrateDatasourceKind.Runtime,
-            startBlock: 3964500,
-            mapping: {
-                file: "./dist/indexShiden.js",
-                handlers: [
-                    {
-                        kind: SubstrateHandlerKind.Event,
-                        handler: "bondAndStakeV2",
-                        filter: {
-                            module: "dappsStaking",
-                            method: "BondAndStake",
-                        },
-                    },
-                    {
-                        kind: SubstrateHandlerKind.Event,
-                        handler: "unbondAndUnstakeV2",
-                        filter: {
-                            module: "dappsStaking",
-                            method: "UnbondAndUnstake",
-                        },
-                    },
-                    {
-                        kind: SubstrateHandlerKind.Event,
-                        handler: "nominationTransferV2",
-                        filter: {
-                            module: "dappsStaking",
-                            method: "NominationTransfer",
-                        },
-                    },
-                    {
-                        kind: SubstrateHandlerKind.Event,
-                        handler: "rewardV2",
-                        filter: {
-                            module: "dappsStaking",
-                            method: "Reward",
-                        },
-                    },
-                    {
-                        kind: SubstrateHandlerKind.Event,
-                        handler: "newDappStakingEraV2",
-                        filter: {
-                            module: "dappsStaking",
-                            method: "NewDappStakingEra",
-                        },
-                    },
-                ],
-            },
-        },
-        {
             // This is the datasource for dAppStakingV3 events
             kind: SubstrateDatasourceKind.Runtime,
             startBlock: 5843300,
@@ -130,25 +80,32 @@ const projectShiden: SubstrateProject<WasmDatasource> = {
         },
         {
             kind: "substrate/Wasm",
-            startBlock: 3964500,
+            startBlock: 6391400,
             //endBlock: 1,
             processor: {
                 file: "./node_modules/@subql/substrate-wasm-processor/dist/bundle.js",
                 options: {
                     abi: "luckyRaffle",
-                    contract: "antwZPZH7fuhLwcjKQUT2cbpfjcKUJS1bt1Lnq2VxSszg8d",
+                    //old contract before 2024-04-25: "antwZPZH7fuhLwcjKQUT2cbpfjcKUJS1bt1Lnq2VxSszg8d",
+                    contract: "W5pzj2pfkkvsNbyLCSA92G5VNYWmxvS86EiN9Kog6PrTfij",
                 },
             },
             assets: new Map([["luckyRaffle", {file: "./metadata_shiden/lucky_raffle_metadata.json"}]]),
             mapping: {
-                file: "./dist/indexShiden.js",
+                file: "./dist/indexShibuya.js",
                 handlers: [
                     {
                         handler: "handleRaffleDone",
                         kind: "substrate/WasmEvent",
                         filter: {
-                            contract: "antwZPZH7fuhLwcjKQUT2cbpfjcKUJS1bt1Lnq2VxSszg8d",
                             identifier: "RaffleDone"
+                        }
+                    },
+                    {
+                        handler: "handleRaffleSkipped",
+                        kind: "substrate/WasmEvent",
+                        filter: {
+                            identifier: "RaffleSkipped"
                         }
                     }
                 ]
@@ -173,7 +130,6 @@ const projectShiden: SubstrateProject<WasmDatasource> = {
                         handler: "handlePendingReward",
                         kind: "substrate/WasmEvent",
                         filter: {
-                            contract: "X6yBHZm9MGzedCVBn6nGHHUDxEnjUNzSoN4aqAP4qooQpEU",
                             identifier: "PendingReward"
                         }
                     },
@@ -181,7 +137,6 @@ const projectShiden: SubstrateProject<WasmDatasource> = {
                         handler: "handleRewardsClaimed",
                         kind: "substrate/WasmEvent",
                         filter: {
-                            contract: "X6yBHZm9MGzedCVBn6nGHHUDxEnjUNzSoN4aqAP4qooQpEU",
                             identifier: "RewardsClaimed"
                         }
                     }

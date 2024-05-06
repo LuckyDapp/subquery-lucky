@@ -41,7 +41,7 @@ const projectShibuya: SubstrateProject<WasmDatasource> = {
     },
     dataSources: [
         {
-            // This is the datasource for Astar's Native Substrate processor
+            // This is the datasource for dAppStakingV3 events
             kind: SubstrateDatasourceKind.Runtime,
             startBlock: 5472414,
             mapping: {

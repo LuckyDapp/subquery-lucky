@@ -128,7 +128,7 @@ export async function handleUnstake(event: SubstrateEvent): Promise<void> {
 export async function handleDAppReward(event: SubstrateEvent): Promise<void> {
     const {
         event: {
-            data: [beneficiary, smartContract, tierId, era, amount],
+            data: [beneficiary, smartContract, tierId, rank, era, amount],
         },
     } = event;
     await logger.info("---------- DAppStaking - DApp Reward --------- ");
@@ -137,6 +137,10 @@ export async function handleDAppReward(event: SubstrateEvent): Promise<void> {
         await logger.info("Other smartContract :" + smartContract.toString());
         return;
     }
+
+    await logger.info("era : " + era );
+    await logger.info("tierId : " + tierId );
+    await logger.info("rank : " + rank );
 
     /* save the developer account the first time to avoid an error with FK */
     let beneficiaryAccount = await Account.get(beneficiary.toString());

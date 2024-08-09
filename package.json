@@ -30,13 +30,13 @@
     "ipfs-unixfs": "6.0.6"
   },
   "devDependencies": {
-    "@polkadot/api": "^10",
-    "@subql/cli": "latest",
-    "@subql/node": "latest",
-    "@subql/testing": "latest",
-    "@subql/types": "latest",
-    "@subql/substrate-wasm-processor": "^1.0.0",
-    "typescript": "^5.2.2"
+    "@polkadot/api": "~12.3.1",
+    "@subql/cli": "~5.1.1",
+    "@subql/node": "~5.1.0",
+    "@subql/testing": "~2.2.1",
+    "@subql/types": "~3.10.0",
+    "@subql/substrate-wasm-processor": "~1.0.0",
+    "typescript": "~5.5.4"
   },
   "exports": {
     "chaintypes": "src/chaintypes.ts",
